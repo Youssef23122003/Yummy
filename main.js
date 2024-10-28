@@ -23,6 +23,7 @@ $('.search').click(function (event) {
     $('.food-details').addClass('d-none')
     $('.spinner-overlay').addClass('d-none')
     $('.inputs').removeClass('d-none').insertBefore('.soso')
+    $('body').css('overflow', 'auto')
     event.preventDefault();
     $('.inputs').removeClass('d-none')
     $('aside').animate({ left: `-${linksWidth}px` })
@@ -63,6 +64,7 @@ $('.cat').click(function (event) {
     $('.soso').removeClass('d-none')
     $('.inputs').addClass('d-none')
     $('.food-details').addClass('d-none')
+    $('body').css('overflow', 'auto')
     event.preventDefault()
     $('aside').animate({ left: `-${linksWidth}px` })
     foodCategory()
@@ -186,6 +188,7 @@ $('.area').click(function (event) {
     $('.soso').removeClass('d-none')
     $('.inputs').addClass('d-none')
     $('.food-details').addClass('d-none')
+    $('body').css('overflow', 'auto')
     event.preventDefault()
     $('aside').animate({ left: `-${linksWidth}px` })
     mealAreas()
@@ -233,6 +236,7 @@ $('.ingredients').click(function (event) {
     $('.soso').removeClass('d-none')
     $('.inputs').addClass('d-none')
     $('.food-details').addClass('d-none')
+    $('body').css('overflow', 'auto')
     event.preventDefault()
     $('aside').animate({ left: `-${linksWidth}px` })
     mealIngredient()
@@ -256,7 +260,8 @@ $('.contact').click(function (event) {
     $('.food-details').addClass('d-none')
     $('.soso').addClass('d-none')
     $('.inputs').addClass('d-none')
- $('.spinner-overlay').addClass('d-none')
+    $('.spinner-overlay').addClass('d-none')
+    $('body').css('overflow', 'auto')
 
 })
 
