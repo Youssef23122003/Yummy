@@ -126,7 +126,7 @@ function displayMealData(meal) {
             </div>
         </div>
         <div class="col-md-8">
-            <div class="inner4 text-white">
+            <div class="inner4 text-white mt-sm-2 mt-lg-0">
                 <h2>Instructions</h2>
                 <p>${meal.strInstructions}</p>
                 <h3><span class="fw-bolder">Area : </span>${meal.strArea}</h3>
