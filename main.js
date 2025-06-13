@@ -3,7 +3,7 @@ $('.open').click(function () {
     $(this).addClass('d-none')
     $('.close').removeClass('d-none')
     $('aside').animate({ left: `0px` })
-    $('aside').css('z-index', 99999999999)
+    $('aside').css('z-index', 999)
     $('.meals-links a').animate({ top: 0 }, 500)
 })
 
@@ -104,14 +104,14 @@ async function mealDetails(mealName) {
 }
 
 function displayMealData(meal) {
-    let ingredientsList = ''
-    for (let i = 1; i <= 20; i++) {
-        let measure = meal[`strMeasure${i}`]
-        let ingredient = meal[`strIngredient${i}`]
-        if (measure && ingredient) {
-            ingredientsList += `<li class="alert alert-info m-2 p-1">${measure} ${ingredient}</li>`
-        }
-    }
+    // let ingredientsList = ''
+    // for (let i = 1; i <= 20; i++) {
+    //     let measure = meal[`strMeasure${i}`]
+    //     let ingredient = meal[`strIngredient${i}`]
+    //     if (measure && ingredient) {
+    //         ingredientsList += `<li class="alert alert-info m-2 p-1">${measure} ${ingredient}</li>`
+    //     }
+    // }
     let tagsList = ''
     if (meal.strTags) {
         let tags = meal.strTags.split(',')
@@ -134,7 +134,29 @@ function displayMealData(meal) {
                 <h3><span class="fw-bolder">Area : </span>${meal.strArea}</h3>
                 <h3><span class="fw-bolder">Category : </span>${meal.strCategory}</h3>
                 <h3>Recipes :</h3>
-                <ul class="list-unstyled d-flex g-3 flex-wrap">${ingredientsList}</ul>
+                <ul class="list-unstyled d-flex g-3 flex-wrap">  
+               <li class="${meal.strMeasure1 && meal.strIngredient1 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure1} ${meal.strIngredient1}</li>
+<li class="${meal.strMeasure2 && meal.strIngredient2 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure2} ${meal.strIngredient2}</li>
+<li class="${meal.strMeasure3 && meal.strIngredient3 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure3} ${meal.strIngredient3}</li>
+<li class="${meal.strMeasure4 && meal.strIngredient4 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure4} ${meal.strIngredient4}</li>
+<li class="${meal.strMeasure5 && meal.strIngredient5 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure5} ${meal.strIngredient5}</li>
+<li class="${meal.strMeasure6 && meal.strIngredient6 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure6} ${meal.strIngredient6}</li>
+<li class="${meal.strMeasure7 && meal.strIngredient7 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure7} ${meal.strIngredient7}</li>
+<li class="${meal.strMeasure8 && meal.strIngredient8 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure8} ${meal.strIngredient8}</li>
+<li class="${meal.strMeasure9 && meal.strIngredient9 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure9} ${meal.strIngredient9}</li>
+<li class="${meal.strMeasure10 && meal.strIngredient10 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure10} ${meal.strIngredient10}</li>
+<li class="${meal.strMeasure11 && meal.strIngredient11 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure11} ${meal.strIngredient11}</li>
+<li class="${meal.strMeasure12 && meal.strIngredient12 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure12} ${meal.strIngredient12}</li>
+<li class="${meal.strMeasure13 && meal.strIngredient13 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure13} ${meal.strIngredient13}</li>
+<li class="${meal.strMeasure14 && meal.strIngredient14 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure14} ${meal.strIngredient14}</li>
+<li class="${meal.strMeasure15 && meal.strIngredient15 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure15} ${meal.strIngredient15}</li>
+<li class="${meal.strMeasure16 && meal.strIngredient16 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure16} ${meal.strIngredient16}</li>
+<li class="${meal.strMeasure17 && meal.strIngredient17 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure17} ${meal.strIngredient17}</li>
+<li class="${meal.strMeasure18 && meal.strIngredient18 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure18} ${meal.strIngredient18}</li>
+<li class="${meal.strMeasure19 && meal.strIngredient19 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure19} ${meal.strIngredient19}</li>
+<li class="${meal.strMeasure20 && meal.strIngredient20 ? 'alert alert-info m-2 p-1' : 'd-none'}">${meal.strMeasure20} ${meal.strIngredient20}</li>
+
+                </ul>
                 <h3>Tags :</h3>
                <ul class="list-unstyled d-flex g-3 flex-wrap">${tagsList}</ul>
                 <a target="_blank" href="${meal.strSource}" class="btn btn-success">Source</a>
@@ -188,7 +210,7 @@ $('.area').click(function (event) {
     $('.soso').removeClass('d-none')
     $('.inputs').addClass('d-none')
     $('.food-details').addClass('d-none')
-    $('body').css('overflow', 'auto')
+    $('body').css('overflow','auto')
     event.preventDefault()
     $('aside').animate({ left: `-${linksWidth}px` })
     mealAreas()
@@ -236,7 +258,7 @@ $('.ingredients').click(function (event) {
     $('.soso').removeClass('d-none')
     $('.inputs').addClass('d-none')
     $('.food-details').addClass('d-none')
-    $('body').css('overflow', 'auto')
+    $('body').css('overflow','auto')
     event.preventDefault()
     $('aside').animate({ left: `-${linksWidth}px` })
     mealIngredient()
@@ -261,7 +283,7 @@ $('.contact').click(function (event) {
     $('.soso').addClass('d-none')
     $('.inputs').addClass('d-none')
     $('.spinner-overlay').addClass('d-none')
-    $('body').css('overflow', 'auto')
+    $('body').css('overflow','auto')
 
 })
 
